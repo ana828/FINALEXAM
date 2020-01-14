@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "443442805950",
+    "firebase_url": "https://nadiri.firebaseio.com",
+    "project_id": "nadiri",
+    "storage_bucket": "nadiri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443442805950:android:49dc8d40faa91e6951b2ef",
+        "android_client_info": {
+          "package_name": "com.example.nadiri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443442805950-7fbmrt2m0kpa1of0m1cusb9f6csml6cd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nadiri",
+            "certificate_hash": "94f5871c34df6d1db4af04f043b6054a6bd17e2f"
+          }
+        },
+        {
+          "client_id": "443442805950-530uvpekhv9ua4k5pdhlcrmq6p5nnovq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2fgUQXfsEalAnyAEwS31uH5pGbaqpbmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443442805950-530uvpekhv9ua4k5pdhlcrmq6p5nnovq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
