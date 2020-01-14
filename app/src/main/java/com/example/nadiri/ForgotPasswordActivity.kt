@@ -27,17 +27,17 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
             if (TextUtils.isEmpty(email)) {
 
-                Toast.makeText(this, "PLEASE ENTER EMAIL", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Please enter the email", Toast.LENGTH_LONG).show()
 
             } else {
 
                 auth.sendPasswordResetEmail(email)
                     .addOnCompleteListener(this, OnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(this, "SUCCESSFULLY SEND", Toast.LENGTH_LONG)
+                            Toast.makeText(this, "Successfully sent", Toast.LENGTH_LONG)
                                 .show()
                         } else {
-                            Toast.makeText(this, "UNABLE TO SEND", Toast.LENGTH_LONG)
+                            Toast.makeText(this, "Unable to send", Toast.LENGTH_LONG)
                                 .show()
                         }
                     })

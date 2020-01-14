@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
 
-                Toast.makeText(this@MainActivity, "PLEASE FILL ALL THE FIELD", Toast.LENGTH_LONG)
+                Toast.makeText(this@MainActivity, "Please fill all the field", Toast.LENGTH_LONG)
                     .show()
 
             } else {
@@ -50,12 +50,12 @@ class MainActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, OnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(this, "SUCCESSFULLY LOGGED IN", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Successfully loged in", Toast.LENGTH_LONG).show()
                             val intent = Intent(this, LoginActivity::class.java)
                             startActivity(intent)
                             finish()
                         } else {
-                            Toast.makeText(this, "LOGIN FAILED", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Login field", Toast.LENGTH_LONG).show()
                         }
                     })
 

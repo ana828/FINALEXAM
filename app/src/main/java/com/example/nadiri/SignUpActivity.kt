@@ -26,7 +26,7 @@ class SignUpActivity : AppCompatActivity() {
 
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
 
-                Toast.makeText(this, "PLEASE FILL ALL THE FIELD", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Please fill all the field", Toast.LENGTH_LONG).show()
 
             } else {
 
@@ -34,7 +34,7 @@ class SignUpActivity : AppCompatActivity() {
                     .addOnCompleteListener(this, OnCompleteListener { task ->
                         if (task.isSuccessful) {
 
-                            Toast.makeText(this, "ACCOUNT CREATED", Toast.LENGTH_LONG)
+                            Toast.makeText(this, "Account created", Toast.LENGTH_LONG)
                                 .show()
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
@@ -42,7 +42,7 @@ class SignUpActivity : AppCompatActivity() {
 
                         } else {
 
-                            Toast.makeText(this, "FAILED REGISTRATION", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Failed registration", Toast.LENGTH_LONG).show()
 
                         }
                     })

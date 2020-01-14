@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_login.*
@@ -30,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
 
             if (TextUtils.isEmpty(n) || TextUtils.isEmpty(a) || TextUtils.isEmpty(p)) {
-                Toast.makeText(this, "FILL ALL THE FIELD!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Fill all the field!", Toast.LENGTH_LONG).show()
             } else {
 
                 contactInfo(n, p, a)
@@ -41,10 +42,32 @@ class LoginActivity : AppCompatActivity() {
 
 
         logoutBtn.setOnClickListener {
-            auth.signOut()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+
+            val builder = AlertDialog.Builder(this@LoginActivity)
+            builder.setTitle("Are you sure!")
+            builder.setMessage("Do you want to sign out?")
+            builder.setPositiveButton("YES"){dialog, which ->
+
+                auth.signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+
+            }
+
+
+            builder.setNegativeButton("No"){dialog,which ->
+
+
+            }
+
+            val dialog: AlertDialog = builder.create()
+
+            dialog.show()
+
+
+
+
         }
 
         updatePasswordBtn.setOnClickListener {
@@ -94,6 +117,5 @@ class LoginActivity : AppCompatActivity() {
             })
 
     }
-
 
 }

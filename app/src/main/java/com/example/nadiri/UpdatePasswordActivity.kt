@@ -29,7 +29,7 @@ class UpdatePasswordActivity : AppCompatActivity() {
 
         if (TextUtils.isEmpty(password)) {
 
-            Toast.makeText(this, "PLEASE ENTER THE PASSWORD", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Please enter the password", Toast.LENGTH_LONG).show()
 
         } else {
 
@@ -37,13 +37,13 @@ class UpdatePasswordActivity : AppCompatActivity() {
                 ?.addOnCompleteListener(this, OnCompleteListener { task ->
                     if (task.isSuccessful) {
 
-                        Toast.makeText(this, "SUCCESSFULLY CHANGED", Toast.LENGTH_LONG)
+                        Toast.makeText(this, "Successfully changed", Toast.LENGTH_LONG)
                             .show()
                         finish()
 
                     } else {
 
-                        Toast.makeText(this, "UNABLE TO CHANGE", Toast.LENGTH_LONG)
+                        Toast.makeText(this, "Unable to change", Toast.LENGTH_LONG)
                             .show()
 
                     }
