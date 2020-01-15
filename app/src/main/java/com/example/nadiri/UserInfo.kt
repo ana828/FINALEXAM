@@ -6,5 +6,5 @@ import com.google.firebase.database.IgnoreExtraProperties
 data class UserInfo(
     val name: String = "",
     val mobile: String? = "",
-    val address: String = ""
+    val city: String = ""
 )

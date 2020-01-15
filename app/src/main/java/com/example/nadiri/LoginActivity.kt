@@ -86,10 +86,12 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun contactInfo(name: String, phone: String?, address: String) {
-        val userInfo = UserInfo(name, phone, address)
+    private fun contactInfo(name: String, phone: String?, city: String) {
+        val userInfo = UserInfo(name, phone, city)
         db.child(auth.currentUser?.uid!!).setValue(userInfo)
     }
+
+
 
     private fun addUserInfoChangeListener() {
 
@@ -105,7 +107,7 @@ class LoginActivity : AppCompatActivity() {
                     val userInfo: UserInfo = snap.getValue(UserInfo::class.java) ?: return
 
                     showFullName.text = userInfo.name
-                    showAddress.text = userInfo.address
+                    showAddress.text = userInfo.city
                     showPhone.text = userInfo.mobile ?: ""
 
                     inputFullName.setText("")
@@ -115,7 +117,21 @@ class LoginActivity : AppCompatActivity() {
                 }
 
             })
+        deleteBtn.setOnClickListener{
+
+            val db = FirebaseDatabase.getInstance().getReference("UserInfo")
+            db.child(auth.currentUser?.uid!!).removeValue()
+
+            showFullName.setText("")
+            showAddress.setText("")
+            showPhone.setText("")
+
+
+        }
+
+
 
     }
+
 
 }
