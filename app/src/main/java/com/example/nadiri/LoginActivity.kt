@@ -87,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun contactInfo(name: String, phone: String?, city: String) {
-        val userInfo = UserInfo(name, phone, city)
+        val userInfo = Information(name, phone, city)
         db.child(auth.currentUser?.uid!!).setValue(userInfo)
     }
 
@@ -104,11 +104,11 @@ class LoginActivity : AppCompatActivity() {
 
                 override fun onDataChange(snap: DataSnapshot) {
 
-                    val userInfo: UserInfo = snap.getValue(UserInfo::class.java) ?: return
+                    val userInfo: Information = snap.getValue(Information::class.java) ?: return
 
-                    showFullName.text = userInfo.name
-                    showAddress.text = userInfo.city
-                    showPhone.text = userInfo.mobile ?: ""
+                    showFullName.text = "  FULLNAME : " + userInfo.name
+                    showAddress.text = "  CITY : " + userInfo.city
+                    showPhone.text = "  PHONE : " + userInfo.mobile ?: ""
 
                     inputFullName.setText("")
                     inputPhone.setText("")
@@ -122,9 +122,9 @@ class LoginActivity : AppCompatActivity() {
             val db = FirebaseDatabase.getInstance().getReference("UserInfo")
             db.child(auth.currentUser?.uid!!).removeValue()
 
-            showFullName.setText("")
-            showAddress.setText("")
-            showPhone.setText("")
+            showFullName.setText("  FULLNAME : ")
+            showAddress.setText("  CITY : ")
+            showPhone.setText("  PHONE : ")
 
 
         }
